@@ -50,11 +50,18 @@ li a:hover {
   height: 5%;
 }
 
+.banner-area
+{
+	width: 100%;
+	height: 600px;
+	background-color:#e3e3ff;
+}
+
 .inv_container
 {
 	position: absolute;
 	width: 400px;
-	top: 150px;
+	top: 140px;
 	left: 600px;
 }
 
@@ -77,7 +84,6 @@ html, body
 body
 {
     margin: 0;
-    background-color: #f9f9ff;
 }
 
 .tb
@@ -115,9 +121,26 @@ input, button
     margin: -83px auto 0 auto;
     background-color: #7694ff;
     border-radius: 20px;
-    box-shadow: 0 10px 40px #bfddff, 0 0 0 20px #edf6ff;
+    box-shadow: 0 20px 70px #7694ff, 0 0 0 30px #e3e3ff;
     transform: scale(0.6);
 }
+
+
+#cover_2
+{
+    position: absolute;
+    top: 71%;
+    left: 0;
+    right: 0;
+    width: 550px;
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    background-color: #7694ff;
+    border-radius: 20px;
+    box-shadow: 0 20px 70px #7694ff, 0 0 0 30px #e3e3ff;
+    transform: scale(0.6);
+}
+
 
 form
 {
@@ -128,7 +151,7 @@ input[type="text"]
 {
     width: 100%;
     height: 96px;
-    font-size: 60px;
+    font-size: 45px;
     line-height: 1;
 
 }
@@ -233,4 +256,14 @@ button span:before, button span:after
     right: -6px;
     width: 40px;
     background-color: #fff;
+}
+
+.image
+{
+  margin:5%;
+  position: absolute;
+  left: 900px;
+  top: 174px;
+  width: 100px;
+  height: 400px;
 }
