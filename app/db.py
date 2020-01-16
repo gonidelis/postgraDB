@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
-engine = create_engine("mysql://admin:password@localhost/postgradb?host=localhost?port=3306")
+engine = create_engine("mysql://user:user@localhost/postgradb?host=localhost?port=3306")
 conn = engine.connect()
 
 
@@ -80,6 +80,14 @@ def search_domain():
       uni = request.args.get('uni')
       return redirect(url_for('universities',name = uni))
 
+
+@app.route('/motivation_page', methods=['GET'])
+def motivation_page():
+	return render_template('motivation.html')
+	
+@app.route('/developers', methods=['GET'])
+def developers():
+	return render_template('developers.html')
 
 if __name__ == '__main__':
    	app.run(debug = True)
