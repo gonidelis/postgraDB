@@ -64,19 +64,17 @@ def universities(name):
 @app.route('/search_domain',methods = ['POST', 'GET'])
 def search_domain():
    if request.method == 'POST':
-   	domain = request.form['domain']
-   	result = conn.execute("SELECT * FROM programs_by_unis WHERE Msc like'%%"+domain+"%%'").fetchall()
-   	#result = conn.execute("SELECT * FROM University WHERE universityID='" + uni +"'").fetchall()
+      domain = request.form['domain']
+      result = conn.execute("SELECT * FROM programs_by_unis WHERE Msc like'%%"+domain+"%%'").fetchall()
+      #result = conn.execute("SELECT * FROM University WHERE universityID='" + uni +"'").fetchall()
 
-   	programs = [None] *len(result)
-   	#parse uni_programs data
-	for msc in range(len(result)):
-		programs[msc]=result[msc].Msc +" at "+ result[msc].University
+      programs = [None] *len(result)
+      #parse uni_programs data
+      for msc in range(len(result)):
+         programs[msc]=result[msc].Msc +" at "+ result[msc].University
 
-
-
-   	print(" !!!!!!!!!!!!!!!!!!!!!!! \n"+ result[0].Msc)
-   	return render_template('program.html', programs=programs ) 
+      print(" !!!!!!!!!!!!!!!!!!!!!!! \n"+ result[0].Msc)
+      return render_template('program.html', programs=programs ) 
    	#return redirect(url_for('domains', name=result[0].universityID))
    else:
       uni = request.args.get('uni')

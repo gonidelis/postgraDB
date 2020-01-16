@@ -26,7 +26,7 @@ In order to run **db.py** you need to install:
 	
 - sqlalchemy: `pip3 install sqlalchemy`
 	
-- mysqlclient: `pip3 install mysqlclient1`
+- mysqlclient: `pip3 install mysqlclient`
 
 #### C) Execute:
 1. Run `python3 db.py`
