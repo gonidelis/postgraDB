@@ -6,7 +6,7 @@
 
 		<title> Search for studies </title>
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
 			<!-- CSS -->
 			<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
@@ -17,12 +17,12 @@
 
 		<div class="navigation-bar">
 	        <div id="navigation-container">
-	            <img src="{{ url_for('static', filename='img/logo.png') }}" width="5%" height="5%"> 
+	            <img src="{{ url_for('static', filename='img/logo.png') }}" width="5%" height="5%">
 	            <ul>
 	                <li><a href="{{ url_for('home') }}">Home</a></li>
 	                <li><a href="subjects.html">Subjects</a></li>
 	                <li><a href="{{ url_for('search_page') }}">Search</a></li>
-	                <li><a href="#">Team #17</a></li>
+	                <li><a href="{{url_for('developers')}}">Developers</a></li>
 	            </ul>
 	        </div>
     	</div>
@@ -35,7 +35,7 @@
 
 	    	<div class= "inv_container">
 		    	<div class="invitation">
-		    		<h3> 
+		    		<h3>
 						Over 2 million students
 						have found their perfect postgrad program with us
 					</h3>
@@ -44,7 +44,6 @@
 					</h3>
 		    	</div>
 	    	</div>
-    	</div>
 
 
 			<div id="cover">
@@ -52,9 +51,9 @@
 			    <div class="tb">
 			      <div class="td">
 
-    				
+
 			      		<input type="text" placeholder="Search by uniID" name="uni">
-			      		
+
 
 
 			      	</div>
@@ -75,9 +74,9 @@
 			    <div class="tb">
 			      <div class="td">
 
-    				
+
 			      		<input type="text" placeholder="Search by domain" name="domain">
-			      		
+
 
 
 			      	</div>
@@ -92,9 +91,8 @@
 			    </div>
 			  </form>
 			</div>
-    	
-	
+		</div>
+
 
 	</body>
 </html>
-

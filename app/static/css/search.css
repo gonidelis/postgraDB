@@ -1,20 +1,20 @@
+@import "navigation.css";
+
 h1, h2, h3,
 h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   color: #222222;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 p
 {
   font-family: "Poppins", sans-serif;
   color: #222222;
-  font-weight: 190;
+  font-weight: 200;
   font-size: 17px;
-  
+
 }
-
-
 
 li a {
   font-family: "Poppins", sans-serif;
@@ -31,38 +31,12 @@ li a:hover {
   background-color: #5E76CC;
 }
 
-#navigation-container {
-  width: 1200px;
-  margin-left: 200px;
-  height: 5%;
-  background-color: #fff;
-}
-
-.navigation-bar ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-  display:inline-flex;
-  vertical-align:top;
-  background-color: #7694ff;
-  overflow: hidden;
-  float: right;
-  height: 5%;
-}
-
-.banner-area
-{
-	width: 100%;
-	height: 600px;
-	background-color:#e3e3ff;
-}
-
 .inv_container
 {
 	position: absolute;
-	width: 400px;
-	top: 140px;
-	left: 600px;
+	width: 40%;
+	top: 10%;
+	right: 40%;
 }
 
 
@@ -72,19 +46,11 @@ li a:hover {
 	text-transform: uppercase;
 	font-size:20px;
 	margin: 5%;
-	
+
 }
 
-html, body
-{
-    height: 100%;
-    min-height: 100%;
-}
 
-body
-{
-    margin: 0;
-}
+
 
 .tb
 {
@@ -113,10 +79,10 @@ input, button
 #cover
 {
     position: absolute;
+  	width: 40%;
+  	top: 10%;
+  	right: 33%;
     top: 50%;
-    left: 0;
-    right: 0;
-    width: 550px;
     padding: 35px;
     margin: -83px auto 0 auto;
     background-color: #7694ff;
@@ -129,10 +95,10 @@ input, button
 #cover_2
 {
     position: absolute;
-    top: 71%;
-    left: 0;
-    right: 0;
-    width: 550px;
+    width: 40%;
+    top: 10%;
+    right: 33%;
+    top: 75%;
     padding: 35px;
     margin: -83px auto 0 auto;
     background-color: #7694ff;
@@ -190,7 +156,7 @@ button
     background-color: transparent;
     border-radius: 50%;
     transition: 0.5s ease all;
-	
+
 }
 
 button span
@@ -260,10 +226,7 @@ button span:before, button span:after
 
 .image
 {
-  margin:5%;
   position: absolute;
-  left: 900px;
-  top: 174px;
-  width: 100px;
-  height: 400px;
+  right: 0px;
+  bottom: 0px;
 }

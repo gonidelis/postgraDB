@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head >
+		<!-- Mobile compatibility -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title> PostgraDB </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+			<!-- CSS -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/developers.css') }}">
+
+
+	</head>
+
+	<body>
+		<div class="navigation-bar">
+	        <div id="navigation-container">
+	            <img src="{{ url_for('static', filename='img/logo.png') }}" width="5%" height="5%">
+	            <ul>
+	                <li><a href="{{ url_for('home') }}">Home</a></li>
+	                <li><a href="subjects.html">Subjects</a></li>
+	                <li><a href="{{ url_for('search_page') }}">Search</a></li>
+	                <li><a href="{{url_for('developers')}}">Developers</a></li>
+	            </ul>
+	        </div>
+    	</div>
+
+    	<div class="banner-area">
+
+          <div class="welcome_message">
+            <h1>Who made <font color="#666699">PostgraDB</font>?</h1>
+          </div>
+
+					<div class="three">
+
+							<div class="who">
+	              <h3>Ioannis Gonidelis</h3>
+								<h5> Undergraduate Student at AUTH </h5>
+								<div class="dev_image">
+		            	<img src="{{ url_for('static', filename='img/john.png') }}", alt="university students" height= "170" width= "170">
+		            </div>
+								<h5> <i> "Coding keeps me active like jogging." </i> </h5>
+	            </div>
+
+							<div class="who">
+	              <h3>Dimitra Karatza</h3>
+								<h5> Undergraduate Student at AUTH </h5>
+								<div class="dev_image">
+									<img src="{{ url_for('static', filename='img/demetra.png') }}", alt="university students" height= "170" width= "170">
+								</div>
+								<h5> <i> "All your postgraduate programs gathered in PostgraDB. Made simple." </i> </h5>
+	            </div>
+
+							<div class="who">
+	              <h3>Anthi Palazi</h3>
+								<h5> Undergraduate Student at AUTH </h5>
+								<div class="dev_image">
+									<img src="{{ url_for('static', filename='img/anthi.png') }}", alt="university students" height= "170" width= "170">
+								</div>
+								<h5> <i> "Creating PostgraDB was one of the most challenging things in my life!" </i> </h5>
+	            </div>
+
+					</div>
+
+      	</div>
+	</body>
+</html>

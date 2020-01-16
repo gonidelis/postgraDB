@@ -1,0 +1,92 @@
+@import "navigation.css";
+
+h2{
+  font-weight: 300;
+  margin: 5px;
+}
+
+h3{
+  font-weight: 500;
+  margin: 5px;
+}
+
+h5{
+  font-weight: 300;
+  margin: 10px;
+}
+
+li a {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #5E76CC;
+}
+
+.welcome_message{
+    margin: 2%;
+    width: 93%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #222222;
+    text-transform: uppercase;
+  	font-size: 20px;
+}
+
+
+.six{
+    display: block;
+    padding-left: 7%;
+    width:90%;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #222222;
+}
+
+.why{
+  float: left;
+  width: 25%;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  position: relative;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.why:hover .overlay {
+  opacity: 1;
+}
+
+.why:hover .image{
+  opacity: 0.2;
+  filter:alpha(opacity=20);
+}
+
+.text {
+  color: black;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

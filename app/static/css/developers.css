@@ -1,0 +1,55 @@
+@import "navigation.css";
+
+h1,h3{
+  font-weight: 300;
+  margin: 5px;
+}
+
+h5{
+  font-weight: 300;
+  margin: 10px;
+}
+
+li a {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #5E76CC;
+}
+
+.welcome_message{
+    margin: 3%;
+    width: 93%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #222222;
+    text-transform: uppercase;
+  	font-size: 20px;
+}
+
+.three{
+    display: block;
+    padding-left: 7%;
+    width:90%;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #222222;
+}
+
+.who{
+  float: left;
+  width: 25%;
+  margin: 3%;
+  text-align: center;
+  transition: transform .2s;
+}
+
+.who:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head >
+		<!-- Mobile compatibility -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title> PostgraDB </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+			<!-- CSS -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/motivation.css') }}">
+
+
+	</head>
+
+	<body>
+		<div class="navigation-bar">
+	        <div id="navigation-container">
+	            <img src="{{ url_for('static', filename='img/logo.png') }}" width="5%" height="5%">
+	            <ul>
+	                <li><a href="{{ url_for('home') }}">Home</a></li>
+	                <li><a href="subjects.html">Subjects</a></li>
+	                <li><a href="{{ url_for('search_page') }}">Search</a></li>
+	                <li><a href="{{url_for('developers')}}">Developers</a></li>
+	            </ul>
+	        </div>
+    	</div>
+
+    	<div class="banner-area">
+
+          <div class="welcome_message">
+            <h2>Why become a <font color="#666699">user</font> of PostgraDB?</h2>
+          </div>
+
+					<div class="six">
+
+							<div class="why">
+	              <h3> <font color="#666699">Search</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/search_easy.png') }}", alt="icon" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"> <br>Find available postgraduate programs from all over the world, as well as enlightening information about them.</div>
+  							</div>
+	            </div>
+
+							<div class="why">
+	              <h3> <font color="#666699">Compare</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/compare.png') }}", alt="icon" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"> <br>Make comparison between fees, quality, location and field of the programs to help yourself decide.</div>
+  							</div>
+	            </div>
+
+							<div class="why">
+	              <h3><font color="#666699">Master</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/master.png') }}", alt="university students" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"> <br>Stand out in the labour market by upgrading your CV as well as your technical brilliance.</div>
+  							</div>
+	            </div>
+
+							<div class="why">
+	              <h3><font color="#666699">Success</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/success.png') }}", alt="icon" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"> Achieve your goals by finding the master program that fits to you best.</div>
+  							</div>
+	            </div>
+
+							<div class="why">
+	              <h3><font color="#666699">Like</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/like.png') }}", alt="icon" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"> Like your favorite programs so that you can find them anytime.</div>
+  							</div>
+							</div>
+
+							<div class="why">
+	              <h3><font color="#666699">Review</font></h3>
+								<div class="image">
+									<img src="{{ url_for('static', filename='img/review.png') }}", alt="icon" height= "170" width= "170" class="image">
+								</div>
+								<div class="overlay">
+    							<div class="text"><br>Tell us how good was your postgraduate program and help other users around the world.</div>
+  							</div>
+							</div>
+
+					</div>
+
+      	</div>
+	</body>
+</html>
