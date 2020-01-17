@@ -53,7 +53,9 @@ def universities(name):
 
 
 	programs = [None] *len(uni_programs)
+	temp_ids = [None] * len(uni_programs)
 	ids = [None] * len(uni_programs)
+
 
 	#parse uni_programs data
 	for msc in range(len(uni_programs)):
@@ -63,10 +65,14 @@ def universities(name):
 	for program_ids in range(len(uni_programs)):
 		join_dept_program="SELECT Program.name, Department.university_id, Program.programID FROM postgradb.Program join postgradb.Department on department_id= departmentID"
 		program_name_to_id="SELECT q1.programID FROM (%s)as q1 where q1.university_id='%s' and q1.name ='%s'" %(join_dept_program, name, programs[program_ids])
-		ids[program_ids]= conn.execute(program_name_to_id).first()
+		temp_ids[program_ids]= conn.execute(program_name_to_id).first()
 
-	print(ids[0][0])
-	print(type(ids[program_ids][0]))
+
+	#convet program ids (from sqlalchemy.row.proxy type) in str 
+	for i in range(len(uni_programs)):
+		ids[i]=(temp_ids[i][0])
+
+	print(ids[0])
 	
 	return render_template('university.html', uni_country=uni_country ,uni_name=uni_name, uni_rank=uni_rank, uni_city=uni_city, programs=programs, program_ids=ids )
 
@@ -99,9 +105,40 @@ def motivation_page():
 def developers():
 	return render_template('developers.html')
 
-@app.route('/test', methods=['GET'])
-def program():
-	return render_template('program.html')
+@app.route('/programs/<program>', methods=['GET'])
+def programs(program):
+	program = conn.execute("SELECT * FROM Program WHERE programID='" + program +"'").fetchall()
+
+
+	#parse program data
+	program_name=program[0].name
+	duration=program[0].duration
+	num_of_students=program[0].number_of_students
+	deadline=program[0].applications_deadline
+	fees=program[0].fees
+	description=program[0].description
+
+	print(program_name)
+
+	#get Univeristy from Department table
+	join_dept_program="SELECT Department.university_id, Program.programID FROM postgradb.Program join postgradb.Department on department_id= departmentID"
+	
+	query="select q1.university_id from (%s) as q1  where q1.programID='%s'" %(join_dept_program, program[0].programID)
+	program_university=conn.execute(query).first()
+
+	uni_id= program_university[0]
+
+	uni_query="SELECT name,city  FROM postgradb.University where universityID='%s'; "%(uni_id)
+	uni=conn.execute(uni_query).first()
+
+	uni_name=uni[0]
+	uni_city=uni[1]
+
+
+	#print(program_name)
+	return render_template('program.html', prog_name=program_name, dur=duration, num_of_students=num_of_students, deadline=deadline , fees=fees, description=description , uni_name=uni_name, uni_city=uni_city)
+
+
 
 if __name__ == '__main__':
    	app.run(debug = True)

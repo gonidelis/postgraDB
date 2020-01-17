@@ -36,8 +36,8 @@
 	            	<h3 align=right , style=" font-weight: 300"><i>{{uni_city}} - {{uni_country}}</i></h2>
 	            	<h4 style="font-weight: 400">Postgraduate programs available: </h4>
 	            	<ul style="list-style-type: none">
-		            	{% for result in programs%}
-							<li ><a style="color:#001861 ; text-align: left "  > {{ result }} </a></li>
+		            	{% for result in range(programs|length)%}
+							<li ><a style="color:#001861 ; text-align: left" href="{{url_for('programs', program=program_ids[result]) }}" > {{ programs[result] }}</a></li>
 						{% endfor %}
             		</ul>
             	</div>
