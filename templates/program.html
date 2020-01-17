@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head >
+		<!-- Mobile compatibility -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title> PostgraDB </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+			<!-- CSS -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/program.css') }}">
+
+
+	</head>
+
+	<body>
+		<!--main menu remains the same for every html page-->
+		<div class="navigation-bar">
+	        <div id="navigation-container">
+	            <img src="{{ url_for('static', filename='img/logo.png') }}" width="5%" height="5%">
+	            <ul>
+	                <li><a href="{{ url_for('home') }}">Home</a></li>
+	                <li><a href="subjects.html">Subjects</a></li>
+	                <li><a href="{{ url_for('search_page') }}">Search</a></li>
+	                <li><a href="#">Developers</a></li>
+	            </ul>
+	        </div>
+    	</div>
+    	<!-- // -->
+
+    	<div class="banner-area">
+            <div class="program_container">
+								<img src="{{ url_for('static', filename='img/program.jpg') }}", alt="university campus" class=img_program>
+            		<div class="program_info">
+										<div class="basic_info">
+					            	<h1> {{prog_name}} </h1>
+					            	<h2><i><p>{{uni_name}} - {{uni_city}} </p></i></h2>
+										</div>
+										<div class="more_info">
+												<h3>Duration: {{dur}} <i>semesters</i></h3>
+												<h3>Fees: <i>{{fees}}</i></h3>
+												<h3>Number of students:<i>  {{num_of_students}}</i></h3>
+												<h3>Attendancy:<i> Mandatory</i></h3>
+												<h3>Application Deadline:<i>  {{deadline}}</i></h3>
+										</div>
+										<div class="description">
+												<h4>{{description}} </h4>
+									</div>
+
+							</div>
+            </div>
+      	</div>
+	</body>
+</html>

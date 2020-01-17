@@ -39,11 +39,11 @@ def search_uni():
 
 @app.route('/universities/<name>')
 def universities(name):
-	
+
 	#load data
 	uni = conn.execute("SELECT * FROM University WHERE universityID='" + name +"'").fetchall()
 	uni_programs=  conn.execute("SELECT * FROM programs_by_unis WHERE universityID='" + name +"'").fetchall()
-	
+
 
 	#parse uni data
 	uni_name = uni[0].name
@@ -61,19 +61,19 @@ def universities(name):
 	for msc in range(len(uni_programs)):
 		programs[msc]=uni_programs[msc].Msc
 
-	
+
 	for program_ids in range(len(uni_programs)):
 		join_dept_program="SELECT Program.name, Department.university_id, Program.programID FROM postgradb.Program join postgradb.Department on department_id= departmentID"
 		program_name_to_id="SELECT q1.programID FROM (%s)as q1 where q1.university_id='%s' and q1.name ='%s'" %(join_dept_program, name, programs[program_ids])
 		temp_ids[program_ids]= conn.execute(program_name_to_id).first()
 
 
-	#convet program ids (from sqlalchemy.row.proxy type) in str 
+	#convet program ids (from sqlalchemy.row.proxy type) in str
 	for i in range(len(uni_programs)):
 		ids[i]=(temp_ids[i][0])
 
 	print(ids[0])
-	
+
 	return render_template('university.html', uni_country=uni_country ,uni_name=uni_name, uni_rank=uni_rank, uni_city=uni_city, programs=programs, program_ids=ids )
 
 
@@ -90,7 +90,7 @@ def search_domain():
          programs[msc]=result[msc].Msc +" at "+ result[msc].University
 
       #print(" !!!!!!!!!!!!!!!!!!!!!!! \n"+ result[0].Msc)
-      return render_template('domain_programs.html', programs=programs ) 
+      return render_template('domain_programs.html', programs=programs )
    	  #return redirect(url_for('domains', name=result[0].universityID))
    else:
       uni = request.args.get('uni')
@@ -100,7 +100,7 @@ def search_domain():
 @app.route('/motivation_page', methods=['GET'])
 def motivation_page():
 	return render_template('motivation.html')
-	
+
 @app.route('/developers', methods=['GET'])
 def developers():
 	return render_template('developers.html')
@@ -117,12 +117,13 @@ def programs(program):
 	deadline=program[0].applications_deadline
 	fees=program[0].fees
 	description=program[0].description
+	attendancy=program[0].attendancy
 
 	print(program_name)
 
 	#get Univeristy from Department table
 	join_dept_program="SELECT Department.university_id, Program.programID FROM postgradb.Program join postgradb.Department on department_id= departmentID"
-	
+
 	query="select q1.university_id from (%s) as q1  where q1.programID='%s'" %(join_dept_program, program[0].programID)
 	program_university=conn.execute(query).first()
 
@@ -136,10 +137,9 @@ def programs(program):
 
 
 	#print(program_name)
-	return render_template('program.html', prog_name=program_name, dur=duration, num_of_students=num_of_students, deadline=deadline , fees=fees, description=description , uni_name=uni_name, uni_city=uni_city)
+	return render_template('program.html', prog_name=program_name, dur=duration, num_of_students=num_of_students, deadline=deadline , fees=fees, description=description , uni_name=uni_name, uni_city=uni_city, attendancy=attendancy)
 
 
 
 if __name__ == '__main__':
    	app.run(debug = True)
-

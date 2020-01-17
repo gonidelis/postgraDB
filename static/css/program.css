@@ -1,0 +1,91 @@
+@import "navigation.css";
+
+h1{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 400;
+  text-shadow: 2px 2px gray;
+}
+
+h2{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+h3{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 500;
+  font-size: 100%;
+  text-align: right;
+}
+
+h5{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 400;
+  font-size: 120%;
+  text-align: left;
+}
+
+
+h4{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 500;
+}
+
+
+li a {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+li a:hover {
+  background-color: #5E76CC;
+}
+
+.img_program
+{
+  position: absolute;
+  left: 20%;
+  top: 7%;
+  border: 2px solid ;
+  border-color: #7694ff;
+  border-radius: 5%;
+  width: 800px;
+  height: 500px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+
+.program_info {
+  position: absolute;
+  left: 20%;
+  top: 7%;
+  width: 800px;
+  height: 500px;
+  padding: 2%;
+}
+.basic_info{
+  padding-left: 5%;
+}
+
+.more_info{
+  padding-right:5%;
+}
+
+.description{
+  padding-right:5%;
+}
