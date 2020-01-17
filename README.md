@@ -1,6 +1,6 @@
 # postgraDB
 
-#####*NOTE: Ubuntu(16/18) usage is strongly recommended*
+##### *NOTE: Ubuntu(16/18) usage is strongly recommended*
 
 #### A) Package Dependencies:
 - python3.X
@@ -67,9 +67,9 @@ __*Note:*__ In case B1 fails you can follow **B2** on which some added dependenc
 
 #### Extra: Use case scenarios
 
-##### In search page user can search universities by uni_id like ("ETH, auth, Duth etc.") 
+a) In search page user can search universities by uni_id like ("ETH, auth, Duth etc.") 
 
-##### In search page user can search available programs (by domain) using any keyword. Typing "psyc" for example will output "psychology" programs. 
+b) In search page user can search available programs (by domain) using any keyword. Typing "psyc" for example will output "psychology" programs. 
 
 
 
