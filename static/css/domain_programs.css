@@ -1,0 +1,66 @@
+@import "navigation.css";
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 200;
+}
+
+p
+{
+  font-family: "Poppins", sans-serif;
+  color: #222222;
+  font-weight: 190;
+  font-size: 17px;
+
+}
+
+
+li a {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+li a:hover {
+  background-color: #5E76CC;
+}
+
+.uni_container
+{
+  position: relative;
+  left: 100px;
+  top: 50px;
+  border: 2px solid ;
+  border-color: #7694ff;
+  border-radius: 5%;
+  width: 600px;
+  height: 200px;
+  padding: 10%;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.uni_info
+{
+  position: absolute;
+  top: 2px;
+  left: 30px;
+
+}
+.main_image
+{
+  position: absolute;
+  right: 1%;
+  bottom: 20%;
+  top: 5%
+}

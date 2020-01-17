@@ -12,7 +12,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
 			<!-- CSS -->
-			<link rel="stylesheet" href="{{ url_for('static', filename='css/university.css') }}">
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/domain_programs.css') }}">
 
 
 	</head>
@@ -35,23 +35,20 @@
     	<div class="banner-area">
             <div class="uni_container">
             	<div class="uni_info">
-	            	<h2 style="font-weight: 500">{{uni_name}} - #{{uni_rank}}</h3>
-	            	<h3 align=right , style=" font-weight: 300"><i>{{uni_city}} - {{uni_country}}</i></h2>
-	            	<h4 style="font-weight: 400">Postgraduate programs available</h4>
+	            	<h2 style="font-weight: 400">Postgraduate programs available:</h2>
 	            	<ul style="list-style-type: none">
 		            	{% for result in programs%}
 							<li ><a style="color:#001861 ; text-align: left "> {{ result }} </a></li>
 						{% endfor %}
             		</ul>
-            		<p>{%for program in programs%}
-					{{program}}{%endfor%}</p>
+
 
             	</div>
 
             </div>
 
             <div class="main_image">
-            	<img src="{{ url_for('static', filename='img/university.jpg') }}", alt="university campus" height= "550" width= "380">
+            	<img src="{{ url_for('static', filename='img/domain_programs.jpeg') }}", alt="university campus" height= "530" width= "380">
             </div>
 
       	</div>
