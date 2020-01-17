@@ -23,7 +23,7 @@
 	                <li><a href="{{ url_for('home') }}">Home</a></li>
 	                <li><a href="subjects.html">Subjects</a></li>
 	                <li><a href="{{ url_for('search_page') }}">Search</a></li>
-	                <li><a href="#">Developers</a></li>
+	                <li><a href="{{url_for('developers')}}">Developers</a></li>
 	            </ul>
 	        </div>
     	</div>
@@ -34,10 +34,10 @@
             	<div class="uni_info">
 	            	<h2 style="font-weight: 500">{{uni_name}} - Rank: {{uni_rank}}</h3>
 	            	<h3 align=right , style=" font-weight: 300"><i>{{uni_city}} - {{uni_country}}</i></h2>
-	            	<h4 style="font-weight: 400">Postgraduate programs available</h4>
+	            	<h4 style="font-weight: 400">Postgraduate programs available: </h4>
 	            	<ul style="list-style-type: none">
 		            	{% for result in programs%}
-							<li ><a style="color:#001861 ; text-align: left "> {{ result }} </a></li>
+							<li ><a style="color:#001861 ; text-align: left "  > {{ result }} </a></li>
 						{% endfor %}
             		</ul>
             	</div>
