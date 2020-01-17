@@ -28,6 +28,8 @@ def search_uni():
    	#domain = request.form['domain']
    	result = conn.execute("SELECT * FROM University WHERE universityID='" + uni +"'").fetchall()
    	#print(result)
+   	if(len(result)==0):
+   		return redirect(url_for('search_page'))
    	return redirect(url_for('universities', name=result[0].universityID))
    else:
       uni = request.args.get('uni')
@@ -79,22 +81,38 @@ def universities(name):
 
 @app.route('/search_domain',methods = ['POST', 'GET'])
 def search_domain():
-   if request.method == 'POST':
-      domain = request.form['domain']
-      result = conn.execute("SELECT * FROM programs_by_unis WHERE Msc like'%%"+domain+"%%'").fetchall()
-      #result = conn.execute("SELECT * FROM University WHERE universityID='" + uni +"'").fetchall()
+	if request.method == 'POST':
+		domain = request.form['domain']
+		result = conn.execute("SELECT * FROM programs_by_unis WHERE Msc like'%%"+domain+"%%'").fetchall()
+      	#result = conn.execute("SELECT * FROM University WHERE universityID='" + uni +"'").fetchall()
 
-      programs = [None] *len(result)
-      #parse uni_programs data
-      for msc in range(len(result)):
-         programs[msc]=result[msc].Msc +" at "+ result[msc].University
+		programs = [None] *len(result)
+		program_plus_uni=[None] *len(result)
+		uni_id=[None] *len(result)
+		temp_ids = [None] * len(result)
+		ids = [None] * len(result)
 
-      #print(" !!!!!!!!!!!!!!!!!!!!!!! \n"+ result[0].Msc)
-      return render_template('domain_programs.html', programs=programs )
-   	  #return redirect(url_for('domains', name=result[0].universityID))
-   else:
-      uni = request.args.get('uni')
-      return redirect(url_for('universities',name = uni))
+
+		#parse uni_programs data
+		for msc in range(len(result)):
+			programs[msc]=result[msc].Msc 
+			program_plus_uni[msc]=programs[msc]+" at "+ result[msc].University
+			uni_id[msc]=result[msc].universityID
+
+		for program_ids in range(len(result)):
+			join_dept_program="SELECT Program.name, Department.university_id, Program.programID FROM postgradb.Program join postgradb.Department on department_id= departmentID"
+			program_name_to_id="SELECT q1.programID FROM ("+join_dept_program+") as q1 where q1.university_id='"+uni_id[program_ids]+"' and q1.name like '%%"+domain+"%%'" 
+			temp_ids[program_ids]= conn.execute(program_name_to_id).first()
+
+		for i in range(len(result)):
+			ids[i]=(temp_ids[i][0])
+
+
+		print(type(program_plus_uni))
+	    #print(" !!!!!!!!!!!!!!!!!!!!!!! \n"+ result[0].Msc)
+		return render_template('domain_programs.html', programs=program_plus_uni, program_ids=ids )
+		#return redirect(url_for('domains', name=result[0].universityID))
+	
 
 
 @app.route('/motivation_page', methods=['GET'])
