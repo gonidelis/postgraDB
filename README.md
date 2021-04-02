@@ -19,7 +19,7 @@
 
 2. Activate your virtual environment: `> source env/bin/activate`
 
-#### B1) Virtual envionment dependencies:
+#### B) Virtual envionment dependencies:
 In order to run *db.py* you need to install:
 
 1. Flask : `pip3 install flask`
