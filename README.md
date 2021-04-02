@@ -28,19 +28,11 @@ In order to run *db.py* you need to install:
 
 3. mysqlclient: `pip3 install mysqlclient`
 
-__*Note:*__ In case B1 fails you can follow **B2** on which some added dependencies are installed. 
-
-#### B2) Virtual envionment dependencies (<u>Warning</u>: Execute this step only in case B1 fails completely):
-1. After sourcing your virtual environment execute:
-
-		pip3 install -r requirements.txt
-
-
 #### C) Skip this section if no errors came up from section B
 
-- If you got an error `Failed building wheel for sqlalchemy` at step 2 you should run `pip3 install wheel` and then try again from step 2.
+- If you got an error `Failed building wheel for sqlalchemy` at step B.2 you should run `pip3 install wheel` and then try again from step 2.
 
-- If you got an error `Failed building wheel for mysqlclient` at step 3 then run the following commands:
+- If you got an error `Failed building wheel for mysqlclient` at step B.3 then run the following commands:
 
 	- Install the Python and MySQL development headers and libraries: `sudo apt-get install python-dev default-libmysqlclient-dev`
 	- If you are using python3 then you need to install python3-dev using the following command:
